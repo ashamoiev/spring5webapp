@@ -31,17 +31,20 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
     private void initData() {
         Author nosov = new Author("Nikolay", "Nosov");
         Publisher zorya = new Publisher("Zorya", "Kyiv");
+        publisherRepository.save(zorya);
+
         Book hedgehog = new Book("Hedgehog in the fog", "123456", zorya);
         nosov.getBooks().add(hedgehog);
-        publisherRepository.save(zorya);
-        authorRepository.save(nosov);
+        hedgehog.getAuthors().add(nosov);
         bookRepository.save(hedgehog);
+        authorRepository.save(nosov);
 
         Author horstamn = new Author("Kay", "Horstman");
         Publisher headfirst = new Publisher("Headfirst", "Kharkiv");
-        Book java = new Book("Java in nutshell", "654321", headfirst);
-        horstamn.getBooks().add(java);
         publisherRepository.save(headfirst);
+        Book java = new Book("Java in nutshell", "654321", headfirst);
+        java.getAuthors().add(horstamn);
+        horstamn.getBooks().add(java);
         bookRepository.save(java);
         authorRepository.save(horstamn);
     }
