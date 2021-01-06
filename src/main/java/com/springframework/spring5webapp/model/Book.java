@@ -11,7 +11,9 @@ public class Book {
     private Long id;
     private String name;
     private String isbn;
-    private String publisher;
+
+    @OneToOne
+    private Publisher publisher;
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "book_author", joinColumns = {@JoinColumn(name = "book_id")},
@@ -21,7 +23,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(String name, String isbn, String publisher) {
+    public Book(String name, String isbn, Publisher publisher) {
         this.name = name;
         this.isbn = isbn;
         this.publisher = publisher;
