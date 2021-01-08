@@ -20,4 +20,8 @@ public class Publisher {
         this.name = name;
         this.address = address;
     }
+
+    public String getAddress() {
+        return address;
+    }
 }
