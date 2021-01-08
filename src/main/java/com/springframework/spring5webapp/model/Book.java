@@ -29,6 +29,22 @@ public class Book {
         this.publisher = publisher;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
     public Set<Author> getAuthors() {
         return authors;
     }

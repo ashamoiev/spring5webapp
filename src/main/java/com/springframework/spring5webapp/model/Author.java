@@ -23,6 +23,18 @@ public class Author {
         this.lastName = lastName;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
     public Set<Book> getBooks() {
         return books;
     }
